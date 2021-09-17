@@ -1,6 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'test-github-cloudbuild:v1', '.']
-- name: 'gcr.io/cloud-builders/echo'
-  args: 
-    - GITHUB_SERVER_URL
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['run', '-dit', 'test-github-cloudbuild:v1']
